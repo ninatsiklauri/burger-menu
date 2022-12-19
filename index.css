@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 8vh;
+    font-family: sans-serif;
+    background-color: rgb(190, 193, 196);
+}
+h1{
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.nav-links{
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
+}
+.nav-links a{
+    color: black;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+.burger{
+    display: none;
+    cursor: pointer;
+}
+.burger div{
+    width: 24px;
+    height: 3px;
+    background-color: rgb(255, 255, 255);
+    margin: 5px;
+    transition: 0.5s;
+}
+.click .line1{
+    transform:  rotate(45deg) translate(0, 12px);
+}
+.click .line2{
+    opacity: 0;
+}
+.click .line3{
+    transform: rotate(-45deg) translate(0, -12px)
+}
+@media screen and (max-width: 1700px) {
+    .nav-links{
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links{
+        position: absolute;
+        z-index: -1;
+        height: 16vh;
+        width: 100%;
+        top: 8vh;
+        background-color: rgb(190, 193, 196);
+        align-items: center;
+        transform: translateY(-200%);
+        transition: transform 0.5s;
+    }
+    .burger{
+        display: block;
+    }
+    .nav-links li{
+        opacity: 0;
+    }
+}
+.nav-active{
+    transform: translateY(0%);
+}
+
+@keyframes navLink {
+    from{
+        opacity: 0;
+        transform: translate(10%);
+    }
+    to{
+        opacity: 3;
+        transform: translate(50%);
+    }
+}
